@@ -1,4 +1,5 @@
 library(tidyverse)
+library(sf)
 
 # Read necessary data
 toilets <- read_csv("data/toilets.csv")
@@ -15,3 +16,13 @@ toilet_leanings <- toilets |>
 # Write combined data to file
 toilet_leanings |> write_csv("data/toilet_leanings.csv")
 
+
+## Plot political leaning toilets map
+toilet_leanings |>
+  st_as_sf(coords = c("Longitude","Latitude")) |>
+  st_set_crs(4326) |>
+ggplot() +
+  aes(color=Leaning) +
+  geom_sf() +
+  coord_sf() +
+  scale_colour_gradient2(low = "blue", mid="gray", high = "red")
