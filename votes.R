@@ -12,3 +12,9 @@ vote_counts <- df |>
 vote_counts <- vote_counts |>
   group_by(StateAb) |>
   mutate(relative_count = total_count / sum(total_count))
+
+vote_counts |> 
+  filter(relative_count >= 0.10) |>
+  ungroup() |>
+  distinct(PartyNm) |>
+  write_csv("data/major_parties_list.csv")
