@@ -1,4 +1,3 @@
-2022 Federal Election Polling Places [Event:27966 Phase:FinalResults Generated:2022-07-19T10:31:27 Cycle:06578790-03c6-4cf4-b786-103cfb915abd Created:2022-07-19T10:24:10 Environment:PROD Site:CANBERRA Server:TALLYROOM Version:10.9.9.0]
 State,DivisionID,DivisionNm,PollingPlaceID,PollingPlaceTypeID,PollingPlaceNm,PremisesNm,PremisesAddress1,PremisesAddress2,PremisesAddress3,PremisesSuburb,PremisesStateAb,PremisesPostCode,Latitude,Longitude
 ACT,318,Bean,93925,5,Belconnen BEAN PPVC,Belconnen Community Centre,Swanson Place,,,BELCONNEN,ACT,2617,-35.23895,149.06914
 ACT,318,Bean,11877,1,Bonython,Bonython Primary School,64 Hurtle Ave,,,BONYTHON,ACT,2905,-35.4314640979023,149.082408682055
