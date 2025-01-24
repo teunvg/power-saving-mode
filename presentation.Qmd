@@ -55,14 +55,39 @@ editor: visual
 ## Pipeline Overview
 
 <!-- visualise pipeline using mermaid -->
+
 ```{mermaid}
-graph LR
+flowchart LR
   A[Public toilets] --> B[NearestToiletPP]
   C[Polling places] --> D[PPLeanings]
   C --> B
   B --> E[ToiletLeanings]
   D --> E
 ```
+
+::::: {columns}
+::: {.column width="50%"}
+1.  Find a toilet
+    -   24175 public toilets in Australia
+    -   dataset info goes here...
+    -   with their properties
+2.  Go PP
+    -   find nearest polling place to each toilet
+    -   out of polling places (8479) used in the 2022 recent election
+    -   provided by Australian Election Committee Tally Room
+    
+:::
+
+::: {.column width="50%"}
+3.  Leaning PP
+    -   For each polling place, determine political leaning
+    -   Amount of votes per party
+    -   Classify parties as left/right (progressive/conservative)
+    -   Determine (proportion of) votes per leaning, for each polling place
+4.  Leaning Toilets
+    -   Combine toilet & PP
+:::
+:::::
 
 ## Code
 
