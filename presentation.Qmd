@@ -52,6 +52,17 @@ editor: visual
   - Determine (proportion of) votes per leaning, for each polling place
 4. Combine: political leaning per toilet
 
+## Pipeline Overview
+
+<!-- visualise pipeline using mermaid -->
+```{mermaid}
+graph LR
+  A[Public toilets] --> B[NearestToiletPP]
+  C[Polling places] --> D[PPLeanings]
+  C --> B
+  B --> E[ToiletLeanings]
+  D --> E
+```
 
 ## Code
 
