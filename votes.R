@@ -11,6 +11,13 @@ for (state in states[-1]) {
 pps <- pps |>
   select(StateAb, DivisionID, DivisionNm, PollingPlaceID, PollingPlace, PartyNm, OrdinaryVotes)
 
+## Add Lat,Long
+pp_coords <- read_csv("data/polling_place.csv") |>
+  select(State, DivisionID, DivisionNm, PollingPlaceID, PollingPlaceNm, Latitude, Longitude)
+
+pps <- pps |>
+  left_join(pp_coords)
+
 ## Collapse parties into leanings, same parties with "different" n
 parties_major <- read_csv("data/party-merge") |>
   rename(PartyNm = Party_Was, Party = Party_Be)
@@ -24,12 +31,12 @@ pps <- pps |>
 
 ## Calculate votes and leanings per PP
 pp_leanings <- pps |>
-  group_by(StateAb, DivisionID, DivisionNm, PollingPlaceID, PollingPlace, Leaning) |>
+  group_by(StateAb, DivisionID, DivisionNm, PollingPlaceID, PollingPlace, Leaning, Latitude, Longitude) |>
   summarise(OrdinaryVotes = sum(OrdinaryVotes)) |>
   pivot_wider(names_from = Leaning, values_from = OrdinaryVotes) |>
   mutate(TotalVotes = Progressive + Conservative + Other) |>
   pivot_longer(c(Progressive, Conservative, Other), names_to = "Leaning", values_to = "OrdinaryVotes") |>
-  group_by(StateAb, DivisionID, DivisionNm, PollingPlaceID, PollingPlace) |>
+  group_by(StateAb, DivisionID, DivisionNm, PollingPlaceID, PollingPlace, Latitude, Longitude) |>
   mutate(ppt_votes = OrdinaryVotes / TotalVotes) |>
   select(-OrdinaryVotes) |>
   pivot_wider(names_from = Leaning, values_from = ppt_votes) |>
