@@ -159,7 +159,8 @@ toilet_leanings |>
   scale_colour_gradient2(low = "blue", mid = "gray", high = "red", limits=c(-1,1))
 ```
 
-```{r}
+## Mean Toilet Leanings
+```{r, dev.args=list(bg="transparent")}
 library(tidyverse)
 
 read_csv('data/toilet_leanings.csv') |>
@@ -176,8 +177,12 @@ read_csv('data/toilet_leanings.csv') |>
     filter(Present) |>
     ggplot() +
         aes(angle = - leaning * 360, color = leaning) +
-        geom_text(label = '🚽', x = 0.5, y = 0.5, size = 30) +
+        geom_text(label = '🚽', x = 0.5, y = 0.5, size = 18) +
         facet_wrap(~ fct_reorder(Property, leaning)) +
-        scale_color_gradient2(low = "blue", mid = "black", high = "red") +
-        theme(legend.position = "none")
+        scale_color_gradient2(low = "blue", mid = "white", high = "red", limits=c(-.25, .25)) +
+        theme_void() +
+        theme(
+          legend.position = "none",
+          text = element_text(size = 20, color = "white")
+        )
 ```
