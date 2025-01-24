@@ -10,6 +10,17 @@ format:
 editor: visual
 ---
 
+```{r, visible=FALSE}
+library(tidyverse)
+library(sf)
+
+# Read necessary data
+toilets <- read_csv("data/toilets.csv")
+toilet_mappings <- read_csv("data/toilet_polling_station_mapping.csv")
+pp_leanings <- read_csv("data/pp_leanings.csv")
+toilet_leanings <- read_csv("data/toilet_leanings.csv")
+```
+
 ## Australia
 
 -   It's a country
@@ -89,12 +100,63 @@ flowchart LR
 :::
 :::::
 
-## Code
 
-When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:
+## Toilets
+```{r, dev = "png", dev.args=list(bg="transparent")}
+toilets |>
+  st_as_sf(coords = c("Longitude", "Latitude")) |>
+  # st_set_crs(4326) |>
+  ggplot() +
+  geom_sf() +
+  coord_sf()
+```
 
-```{r}
-1 + 1
+## Polling places
+```{r, dev = "png", dev.args=list(bg="transparent")}
+pp_leanings |>
+  drop_na() |>
+  filter(Longitude != 0, Latitude !=0) |>
+  st_as_sf(coords = c("Longitude", "Latitude")) |>
+  # st_set_crs(4326) |>
+  ggplot() +
+  geom_sf() +
+  coord_sf()
+```
+
+## Polling places
+```{r, dev = "png", dev.args=list(bg="transparent")}
+pp_leanings |>
+  drop_na() |>
+  filter(Longitude != 0, Latitude !=0) |>
+  st_as_sf(coords = c("Longitude", "Latitude")) |>
+  # st_set_crs(4326) |>
+  ggplot() +
+  aes(color=Leaning) +
+  geom_sf() +
+  coord_sf() +
+  scale_colour_gradient2(low = "blue", mid = "gray", high = "red")
+```
+
+## Toilet leanings
+```{r, dev = "png", dev.args=list(bg="transparent")}
+toilet_leanings |>
+  st_as_sf(coords = c("Longitude", "Latitude")) |>
+  ggplot() +
+  aes(color = Leaning) +
+  geom_sf(color="gray") +
+  coord_sf() +
+  scale_colour_gradient2(low = "blue", mid = "gray", high = "red")
+```
+
+## Toilet leanings
+```{r, dev = "png", dev.args=list(bg="transparent")}
+toilet_leanings |>
+  st_as_sf(coords = c("Longitude", "Latitude")) |>
+  ggplot() +
+  aes(color = Leaning) +
+  geom_sf() +
+  coord_sf() +
+  scale_colour_gradient2(low = "blue", mid = "gray", high = "red")
 ```
 
 ```{r}
