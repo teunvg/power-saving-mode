@@ -161,9 +161,8 @@ toilet_leanings |>
 
 ## Mean Toilet Leanings
 ```{r, dev.args=list(bg="transparent")}
-library(tidyverse)
-
-read_csv('data/toilet_leanings.csv') |>
+## Toilet properties leanings
+toilet_leanings |>
     pivot_longer(cols=c(
         "Male", "Female", "AllGender", "Unisex",
         "AdultChange", "BabyChange", "BabyCareRoom", "Accessible",
