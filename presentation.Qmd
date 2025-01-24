@@ -45,9 +45,9 @@ Gut-brain axis
 
 . . . 
 
-**does one use their gut to make electoral decisions?**
+**Does one use their gut to make electoral decisions?**
 
-## *"Ask not what your country can do for you,*\n but what you can doo-doo for your country" - JFK
+## *"Ask not what your country can do for you,\n but what you can doo-doo for your country"* - JFK
 
 Scenario sketch:
 
@@ -59,7 +59,7 @@ Scenario sketch:
 
 . . . 
 
-**how would you vote?**
+**How would you vote?**
 
 ## What are the voting patterns related to public toilets in Australia?
 
@@ -240,3 +240,17 @@ plot_ly(
         )
     )
 ```
+
+## Discussion
+
+- Australian toilets have distinct political leanings
+- Toilet features even more so
+  - Conservatives care about showers, but nothing else
+  - Progressive are very inclusive, even of the non-showering
+- Limitations:
+  - absolutely none
+  - (maybe Australia does not exist? (World Population Review))
+
+**Trust your gut, all the way to the polls**
+
+
