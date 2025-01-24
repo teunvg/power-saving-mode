@@ -6,53 +6,53 @@ institute: "University College Utrecht"
 format: 
   revealjs:
     incremental: true   
+    theme: "moon"
 editor: visual
 ---
 
 ## Australia
-::: {.incremental}
-- It's a country
-  - allegedly
-- They have elections
-  - Next ones must be held before May 2025
-- Can you vote in them?
-  - Who knows...
-- How should you make your electoral decision?
-  - **Trust your gut**
-:::
+
+-   It's a country
+    -   allegedly (LaTeX Lovers, 2025)
+-   They have elections
+    -   Next ones must be held before May 2025
+-   Can you vote in them?
+    -   Who knows...
+-   How should you make your electoral decision?
+
+. . .
+
+**Trust your gut**
 
 ## Trust your gut
-::: {.incremental}
-- Gut-brain axis
-  - gut-microbiome affects brain chemistry, possible cognition
-  - has traditionally been ignored in research on decision-making
-  - may actually be involved in important decisions such as voting
-  - *does one use their gut to make electoral decisions?*
-:::
 
-## Ask not what your country can do for you, but what you can doo-doo for your country
-::: {.incremental}
-- Scenario sketch:
-  - 
-:::
+Gut-brain axis
 
+-   gut-microbiome affects brain chemistry, possible cognition
+-   has traditionally been ignored in research on decision-making
+-   may actually be involved in important decisions such as voting
 
+. . . 
 
-## Pipeline Overview
+**does one use their gut to make electoral decisions?**
 
-1. Public toilets (24 175) in Australia
-  - dataset info goes here...
-  - With their properties
-2. Find nearest polling place to each toilet
-  - From polling places (8479) in the 2022 recent election,
-    provided by Australian Election Committee Tally Room
-3. For each polling place, determine political leaning
-  - Amount of votes per party
-  - Classify parties as left/right (progressive/conservative)
-  - Determine (proportion of) votes per leaning, for each polling place
-4. Combine: political leaning per toilet
+## *"Ask not what your country can do for you,*\n but what you can doo-doo for your country" - JFK
 
-## Pipeline Overview
+Scenario sketch:
+
+-   You want to vote in the 2025 Australian election
+-   But you have not made up your gut yet
+-   So you find a public restroom
+-   Let your gut decide
+-   Go vote.
+
+. . . 
+
+**how would you vote?**
+
+## What are the voting patterns related to public toilets in Australia?
+
+## Pipeline Overview {.smaller}
 
 <!-- visualise pipeline using mermaid -->
 
