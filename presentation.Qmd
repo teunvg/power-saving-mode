@@ -134,7 +134,7 @@ pp_leanings |>
   aes(color=Leaning) +
   geom_sf() +
   coord_sf() +
-  scale_colour_gradient2(low = "blue", mid = "gray", high = "red")
+  scale_colour_gradient2(low = "blue", mid = "gray", high = "red", limits=c(-1,1))
 ```
 
 ## Toilet leanings
@@ -145,7 +145,7 @@ toilet_leanings |>
   aes(color = Leaning) +
   geom_sf(color="gray") +
   coord_sf() +
-  scale_colour_gradient2(low = "blue", mid = "gray", high = "red")
+  scale_colour_gradient2(low = "blue", mid = "gray", high = "red", limits=c(-1,1))
 ```
 
 ## Toilet leanings
@@ -156,7 +156,7 @@ toilet_leanings |>
   aes(color = Leaning) +
   geom_sf() +
   coord_sf() +
-  scale_colour_gradient2(low = "blue", mid = "gray", high = "red")
+  scale_colour_gradient2(low = "blue", mid = "gray", high = "red", limits=c(-1,1))
 ```
 
 ```{r}
