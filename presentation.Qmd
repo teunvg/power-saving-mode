@@ -209,3 +209,34 @@ toilet_leanings |>
           text = element_text(size = 20, color = "white")
         )
 ```
+
+
+## Toilet leanings
+
+```{r}
+library(plotly)
+library(crosstalk)
+
+# Create a shared data object
+data <- SharedData$new(toilet_leanings)
+
+# Add a filter slider for miles per gallon (mpg)
+filter_slider("leaning", "Political leaning", data, column = ~Leaning, step = .1)
+
+# Create an interactive map
+plot_ly(
+    data=data,
+    lat = ~Latitude,
+    lon = ~Longitude,
+    type = "scattermapbox",
+    mode = "markers",
+    marker = list(size = 10, color = ~Leaning)
+) %>%
+    layout(
+        mapbox = list(
+            style = "white-bg",         # Blank background
+            zoom = 3,                  # Adjust zoom level as needed
+            center = list(lat = -25.0, lon = 133.0) # Centered on Australia
+        )
+    )
+```
