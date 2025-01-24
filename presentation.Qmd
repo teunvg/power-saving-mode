@@ -159,10 +159,10 @@ toilet_leanings |>
   scale_colour_gradient2(low = "blue", mid = "gray", high = "red", limits=c(-1,1))
 ```
 
-```{r}
-library(tidyverse)
+## Toilet properties leanings
 
-read_csv('data/toilet_leanings.csv') |>
+```{r}
+toilet_leanings |>
     pivot_longer(cols=c(
         "Male", "Female", "AllGender", "Unisex",
         "AdultChange", "BabyChange", "BabyCareRoom", "Accessible",
