@@ -1,0 +1,62 @@
+---
+title: "Crappy Politics of Australia"
+author: "Teun van Gils, Lucie Kattenbroek, Joska de Langen, Joris Vincent"
+date: "2025-01-24"
+institute: "University College Utrecht"
+format: 
+  revealjs:
+    incremental: true   
+editor: visual
+---
+
+## Australia
+::: {.incremental}
+- It's a country
+  - allegedly
+- They have elections
+  - Next ones must be held before May 2025
+- Can you vote in them?
+  - Who knows...
+- How should you make your electoral decision?
+  - **Trust your gut**
+:::
+
+## Trust your gut
+::: {.incremental}
+- Gut-brain axis
+  - gut-microbiome affects brain chemistry, possible cognition
+  - has traditionally been ignored in research on decision-making
+  - may actually be involved in important decisions such as voting
+  - *does one use their gut to make electoral decisions?*
+:::
+
+## Ask not what your country can do for you, but what you can doo-doo for your country
+::: {.incremental}
+- Scenario sketch:
+  - 
+:::
+
+
+
+## Pipeline Overview
+
+1. Public toilets (24 175) in Australia
+  - dataset info goes here...
+  - With their properties
+2. Find nearest polling place to each toilet
+  - From polling places (8479) in the 2022 recent election,
+    provided by Australian Election Committee Tally Room
+3. For each polling place, determine political leaning
+  - Amount of votes per party
+  - Classify parties as left/right (progressive/conservative)
+  - Determine (proportion of) votes per leaning, for each polling place
+4. Combine: political leaning per toilet
+
+
+## Code
+
+When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
