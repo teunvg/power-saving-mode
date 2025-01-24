@@ -96,3 +96,26 @@ When you click the **Render** button a presentation will be generated that inclu
 ```{r}
 1 + 1
 ```
+
+```{r}
+library(tidyverse)
+
+read_csv('data/toilet_leanings.csv') |>
+    pivot_longer(cols=c(
+        "Male", "Female", "AllGender", "Unisex",
+        "AdultChange", "BabyChange", "BabyCareRoom", "Accessible",
+        "SanitaryDisposal", "MensPadDisposal", "Shower", 
+        "DrinkingWater", "Parking"
+    ), names_to = "Property", values_to = "Present") |>
+    group_by(Property, Present) |>
+    summarise(
+        leaning = mean(Leaning, na.rm = TRUE)
+    ) |>
+    filter(Present) |>
+    ggplot() +
+        aes(angle = - leaning * 360, color = leaning) +
+        geom_text(label = '🚽', x = 0.5, y = 0.5, size = 30) +
+        facet_wrap(~ fct_reorder(Property, leaning)) +
+        scale_color_gradient2(low = "blue", mid = "black", high = "red") +
+        theme(legend.position = "none")
+```
